@@ -7,10 +7,10 @@
     <title>web</title>
     <style>
         h1{
-            border-bottom: 5px solid black;
+            border-bottom: 5px solid red;
         }
         #navigation{
-            border-right: 5px solid black;
+            border-right: 5px solid blue;
         }
     </style>
     <!-- Bootstrap CSS -->
@@ -18,18 +18,32 @@
 
     <title>Hello, world!</title>
 </head>
-<body>
+<body id="root">
     <div class="container">
         <h1>WEB</h1>
         <div class="row">
             <ol id="navigation" class="col-3">
-                <li>html</li>
-                <li>css</li>
-                <li><a href="js1.html">js</a></li>
+                <li><a href="1.html">html</a></li>
+                <li><a href="2.html">css</a></li>
+                <li><a href="3.html">js</a></li>
             </ol>
             <div class="col">
                 <h2 style="text-decoration: underline;">Welocom</h2>
-                    Hello,WEB
+                Hello,WEB
+                <input type="button" value="night" onclick="document.querySelector('#root').style.backgroundColor = 'black';document.querySelector('#root').style.color = 'rgb(255,255,255)';">
+                <input type="button" value="day" onclick="document.querySelector('#root').style.backgroundColor = 'rgb(255,255,255)';document.querySelector('#root').style.color = 'rgb(0,0,0)';">
+                <input type="button" value="Night" id="dayNightMode" onclick="
+                    if(this.value === 'Night'){
+                        document.querySelector('#root').style.backgroundColor = 'black';
+                        document.querySelector('#root').style.color = 'rgb(255,255,255)';
+                        this.value='Day';
+                    }
+                    else{
+                        document.querySelector('#root').style.backgroundColor = 'rgb(255,255,255)';
+                        document.querySelector('#root').style.color = 'rgb(0,0,0)';
+                        this.value='Night';
+                    }
+                ">
             </div>
         </div>
     </div>
